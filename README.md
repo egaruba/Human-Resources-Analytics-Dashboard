@@ -268,6 +268,7 @@ What are the attrition rates based on gender and different age groups? SELECT ag
 ## Insights & Findings
 
 The analysis results are summarized as follows:
+
 The total number of employees hired by the company are 1,470. Knowing the exact employee count allows for better resource allocation and workforce planning.
 The total number of males hired by the company is 882.
 The total number of females hired by the company is 588.
