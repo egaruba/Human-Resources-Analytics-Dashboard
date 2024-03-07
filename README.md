@@ -117,6 +117,23 @@ Dashboard Visualisation and Report: A dashboard visualisation that explains each
 
 ## Data Preparation
 
+Field Name	Description	Data Type
+EmployeeID	Unique identifier for each employee	VARCHAR(50)
+Gender	Gender of the employee	VARCHAR(50)
+MaritalStatus	Marital status of the employee	VARCHAR(50)
+AgeRange	Age range of the employee	VARCHAR(50)
+Age	Age of the employee	INT
+Department	Department where the employee works	VARCHAR(50)
+Education	Highest education level attained	VARCHAR(50)
+EducationField	Field of education specialization	VARCHAR(50)
+JobRole	Role of the employee within the company	VARCHAR(50)
+BusinessTravel	Frequency of business travel	VARCHAR(50)
+DistanceFromHome	Distance from home to workplace	INT
+OverTime	Whether employee works overtime	VARCHAR(50)
+EmploymentStatus	Current employment status	VARCHAR(50)
+JobInvolvement	Level of job involvement	INT
+PerformanceRating	Performance rating of the employee	INT
+
 In the data preparation phase, I performed the following tasks:
 
 Created a database, setup tables, and imported data.[PIC]
@@ -132,6 +149,10 @@ Following these modifications, successful importation of the dataset was achieve
 
 ## Data Cleaning
 
+The objective of this data cleaning is to improve the data quality by ensuring the data is accurate, complete, valid, and consistent before the data analysis phase. 
+
+### Data Observation
+
 Check the first 5 rows to make sure it imported well. SELECT *FROM ordersLIMIT 5; [PIC]
 Checking for missing values. SELECT *FROM ordersWHERE rowid IS NULL OR orderid IS NULL OR orderdate IS NULL OR shipdate IS NULL. It revealed blank this shows that we have no missing values. [PIC]
 Checking for duplicate Row. SELECT *FROM ordersWHERE (rowid orderid, orderdate, shipdate, shipmode, customerid, customername, sIN ( SELECT rowid, orderid, orderdate, shipdate, shipmode, customerid, customerna FROM orders GROUP BY rowid, orderid, orderdate, shipdate, shipmode, customerid, customer HAVING COUNT(*) > 1)ORDER BY rowid, orderid; The query returns an empty table, showing there are no duplicate rows. [PIC]
@@ -139,26 +160,161 @@ Checking for duplicate Row. SELECT *FROM ordersWHERE (rowid orderid, orderdate, 
 I used MySQL to complete the cleaning task. Fortunately for me the data was relatively clean and only required minimal cleaning.
 You can find the clean “hrdata.csv” file here.
 
- ## Special Characters
+### Data Transformation
 
-  ## Special Characters
+As stated previously, my data was clean and did not require further cleaning. All the raw data in the “hrdata.csv” file was relevant. It did not contain messy data, it did not contain data discrepancies and it did not require data transformation to resolve special characters not displaying correctly.
 
-   ## Special Characters
+## Issues Found
 
-    ## Special Characters
+During the initial data cleaning of the Human Resources dataset, one issue was identified and resolved:
 
-     ## Special Characters
+Column Removal: The “HR Data.xlsx” was opened in Excel. After opening the file, I noticed two new columns inside the worksheet. I removed the two columns because they did not provide any useful data. The columns were called “-2” and ”0”. All the data inside contained the same values of “-2” and ”0”.
+
+You can find the clean “HR Data.xlsx” file here.
+
+## Exploratory Data Analysis
+
+Exploratory Data Analysis is utilised when examining employee data in order to answer key questions, such as:
+
+What is the overall analytics trend?
+Which employees are most satisfied?
+What are the peak attrition rates?
+
+### Questions To Be Explored
+
+What is the aggregate count of employed personnel within the organization?
+How many individuals have transitioned from employment within the organization?
+What is the composite turnover rate or attrition quotient characterizing the organizational dynamics?
+By what methodology can we discern the distinction between actively engaged and disengaged personnel?
+What is the mean age, or alternatively, the median age, of the organization's workforce?
+What discernible trends emerge in attrition delineated by gender within the organizational context?
+Across the array of departments, what variance exists in attrition metrics?
+How is the workforce stratified across distinct age cohorts?
+What quantifiable metrics inform us of employee engagement and overarching job satisfaction levels?
+How do attrition rates stratify across disparate educational backgrounds within the employee pool?
+What nuanced patterns emerge in attrition rates predicated upon both gender and discrete age cohorts?
+
+## Functional Validation
+
+Test each feature work as per the requirement. To verify all the filters and Action Filters on the report work as per the requirements.
+
+TEST TABLE
+Test No.	Sheet Name	Query	Test Result	QA Remark
+1	KPI- Employee Count	select sum(employee_count) as Employee_Count from hrdata;	Pass	Exact match
+2	KPI- Attrition Count	select count(attrition) from hrdata where attrition='Yes';	Pass	Exact match
+3	KPI- Attrition Rate	select 
+round (((select count(attrition) from hrdata where attrition='Yes')/ 
+sum(employee_count)) * 100,2)
+from hrdata;	Pass	Exact match
+4	KPI- Active Employee	select sum(employee_count) - (select count(attrition) from hrdata  where attrition='Yes') from hrdata;	Pass	Exact match
+5	KPI- Average Age	select round(avg(age),0) from hrdata;	Pass	Exact match
+6	Attrition by Gender	select gender, count(attrition) as attrition_count from hrdata
+where attrition='Yes'
+group by gender
+order by count(attrition) desc;	Pass	Exact match
+7	Department wise Attrition	select department, count(attrition), round((cast (count(attrition) as numeric) / 
+(select count(attrition) from hrdata where attrition= 'Yes')) * 100, 2) as pct from hrdata
+where attrition='Yes'
+group by department 
+order by count(attrition) desc;	Pass	Exact match
+8	No of Employee by Age Group	SELECT age,  sum(employee_count) AS employee_count FROM hrdata
+GROUP BY age
+order by age;	Pass	Exact match
+9	Education Field wise Attrition	select education_field, count(attrition) as attrition_count from hrdata
+where attrition='Yes'
+group by education_field
+order by count(attrition) desc;	Pass	Exact match
+10	Attrition Rate by Gender for different Age group	select age_band, gender, count(attrition) as attrition, 
+round((cast(count(attrition) as numeric) / (select count(attrition) from hrdata where attrition = 'Yes')) * 100,2) as pct
+from hrdata
+where attrition = 'Yes'
+group by age_band, gender
+order by age_band desc;	Pass	Exact match
+11	Job Satisfaction Rating	SELECT * FROM 
+crosstab('SELECT job_role, job_satisfaction, sum(employee_count)
+   FROM hrdata
+   GROUP BY job_role, job_satisfaction
+   ORDER BY job_role, job_satisfaction'
+	) AS ct(job_role varchar(50), one numeric, two numeric, three numeric, four numeric)
+ORDER BY job_role;	Pass	Exact match 
+
+## Data Validation/ Analysis
+
+What is the total number of employees? SELECT SUM(employee_count) AS Employee_Count FROM hrdata;
+What is the total number of employees in the Sales Department? SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE department = “Sales”;
+What is the total number of employees in the HR Department? SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE department = “HR”;
+What is the total number of employees in the R&D Department? SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE department = “R&D”;
+What is the total number of employees with a High School Diploma? SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE education = "High School”;
+What is the total number of employees with a Bachelor’s Degree? SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE education = “Bachelor’s Degree”;
+What is the total number of employees with a Doctoral Degree? SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE education = “Doctoral Degree”;
+What is the total number of employees with an Associates Degree? SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE education = “Associates Degree”;
+What is the total number of employees with a Master’s Degree? SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE education = “Master’s Degree”;
+What is the number of employees who have left the organisation? SELECT COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = “Yes";
+What is the number of employees who have left the organisation in the Sales Department? SELECT COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = “Yes” && department = “Sales";
+What is the number of employees who have left the organisation in the HR Department? SELECT COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = “Yes" WHERE attrition = “Yes” && department = “HR";
+What is the number of employees who have left the organisation in the R&D Department? SELECT COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = "Yes" WHERE attrition = “Yes” && department = “R&D”;
+What is the number of employees who have not left the organisation? SELECT SUM(employee_count) - (SELECT COUNT(attrition) FROM hrdata WHERE attrition = “Yes") AS Active_Employees FROM hrdata;
+What is the overall turnover level or attrition rate of the organisation? SELECT ROUND(((SELECT COUNT(attrition) FROM hrdata WHERE attrition = "Yes")/SUM(employee_count)) * 100, 2) AS Attrition_Rate FROM hrdata;
+What is the difference between active and inactive employees? SELECT SUM(employee_count) - (SELECT COUNT(attrition) FROM hrdata WHERE attrition = “Yes") AS Active_Employees FROM hrdata; SELECT COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = "Yes" WHERE attrition = “Yes”;
+What is the average age of employees? SELECT ROUND(AVG(age), 0) AS Average_Age FROM hrdata;
+What are the attrition patterns based on gender? SELECT gender, COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = “Yes" GROUP BY gender ORDER BY COUNT(attrition) DESC;
+What are the attrition rates across the different departments? SELECT department, COUNT(attrition) AS Attrition_Count, ROUND(((COUNT(attrition))/ 
+(SELECT COUNT(attrition) FROM hrdata WHERE attrition = "Yes")) * 100, 2) AS Attrition_Rate FROM hrdata WHERE attrition = “Yes" GROUP BY department ORDER BY COUNT(attrition) DESC;
+What are the distribution of employees across various age groups? SELECT age, SUM(employee_count) AS Employee_Count FROM hrdata GROUP BY age ORDER BY age;
+What are the employee engagement and overall job satisfaction ratings? SELECT job_role, job_satisfaction, SUM(employee_count) AS Satisfaction_Score FROM hrdata GROUP BY job_role, job_satisfaction ORDER BY job_role, job_satisfaction;
+What are the attrition rates based on educational background? SELECT education_field, COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = “Yes" GROUP BY education_field ORDER BY COUNT(attrition) DESC;
+What are the attrition rates based on gender and different age groups? SELECT age_band, gender, COUNT(attrition) AS Attrition_Count, ROUND(((COUNT(attrition))/ (SELECT COUNT(attrition) FROM hrdata WHERE attrition = "Yes")) * 100, 2) AS Attrition_Rate_By_Gender FROM hrdata WHERE attrition = “Yes" GROUP BY age_band, gender ORDER BY age_band DESC;
+
+## Insights & Findings
+
+The analysis results are summarized as follows:
+The total number of employees hired by the company are 1,470. Knowing the exact employee count allows for better resource allocation and workforce planning.
+The total number of males hired by the company is 882.
+The total number of females hired by the company is 588.
+The number of staff that have left the company is 237. Understanding attrition count helps in assessing the impact of turnover on the organization and identifying potential retention issues.
+Fewer females have left the company. The number of females that have left the company is 87.
+More males have left the company. The number of males that have left the company are 150.
+The rate of attrition of the organisation stands at 16.12% for both sexes. A high attrition rate may indicate issues with employee satisfaction and engagement.
+Females have a lower rate of attrition. The rate of attrition of the organisation for females stands at 14.80%.
+Males have a higher rate of attrition. The rate of attrition of the organisation for males stands at 17.01%.
+HR has the lowest attrition. The fact that the HR Department has a lower number of employees may be a direct correlation to this. The rate of attrition for the HR department is 5.06% with 12 staff leaving.
+The R&D Department has the highest attrition rate. The fact that the R&D Department has a higher number of employees may be a direct correlation to this. The rate of attrition for the R&D department is 56.12% with 133 staff leaving.
+The rate of attrition for the Sales department is 38.82% with 92 staff leaving.
+The number of active employees at the company is 1,233. Understanding the proportion of active employees helps in assessing current workforce capacity.
+The average age of a staff member at the organisation is 37. Deviations from industry norms in average employee age may signal potential issues in attracting and retaining younger talent.
+
+## Recommendations
+
+Based on the analysis, I recommend the following actions:
+
+Implement regular audits of employee data to ensure accuracy. By regularly updating this data, HR can accurately assess the current workforce size and plan for future growth or downsizing effectively.
+Establish protocols for updating employee records promptly.
+Implement a clear exit process for departing employees. Establishing a standardized method for tracking employee attrition will provide reliable data for analyzing turnover trends.
+Regularly update the database to reflect changes in employee status. Accurately identifying active employees enables better workforce management and productivity assessment.
+Conduct exit interviews to gather feedback from departing employees. Analyze attrition rates by department to identify areas needing improvement. Monitoring attrition rate over time allows for the assessment of turnover trends and comparison with industry benchmarks.
+Implement performance reviews to assess employee productivity. Performance reviews enable organizations to recognize and reward employees and ensure legal compliance, contributing to overall organizational effectiveness and success.
+Implement age-inclusive recruitment strategies. Understanding the average age of employees aids in evaluating workforce demographics and succession planning.
+Offer professional development opportunities tailored to different age groups.
+
+## Limitations
+
+Lack of detailed information on job satisfaction and engagement levels.
+Limited historical data for trend analysis.
+Absence of specific reasons for employee attrition.
+Data may not capture employees on leave or temporary assignments effectively.
+Limited diversity in educational backgrounds and job roles represented in the dataset.
+
+## Conclusion
+
+My data analysis results are summarized as follows:
+
+The analysis of employee demographics, attrition rates, active employee numbers, and average age underscores the importance of data-driven decision-making in human resource management. In terms of employee demographics, the company currently employs 1,470 individuals, with a gender distribution of 882 males and 588 females. This understanding of gender representation is pivotal for fostering diversity and inclusion initiatives within the organization. Furthermore, the examination of attrition rates unveils that a total of 237 employees have left, resulting in a 16.12% attrition rate. Importantly, variations in attrition rates are observed between genders and departments, underscoring the necessity for targeted retention strategies tailored to specific groups. 
+
+Regarding active employees, the current workforce capacity is reflected by 1,233 individuals, providing valuable insights into productivity levels and resource allocation. Additionally, with the average age of employees standing at 37, there exists a notable influence on recruitment practices and succession planning efforts. Future research could delve deeper into understanding the underlying reasons behind gender and departmental variations in attrition rates, enabling the development access to more effective employee retention strategies. Additionally, exploring the impact of age diversity on team dynamics and organizational performance could provide valuable insights for talent management practices going forward.
+
+This study highlights the critical role of data analysis in optimizing workforce management strategies and fostering a supportive work environment. By leveraging insights from employee demographics and attrition rates, organizations can tailor their HR policies and practices to enhance employee engagement, retention, and overall organizational success.
 
 
- ## Special Characters
-
-  ## Special Characters
-
-   ## Special Characters
-
-    ## Special Characters
-
-     ## Special Characters
  ## Special Characters
   After importing the data to power query editor in excel, I changed the file origin to UTF-8 encoding,this automatically removed the special characters and replaced 
   it with the appropriate letter.
