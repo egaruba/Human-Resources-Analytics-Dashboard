@@ -190,7 +190,7 @@ During the initial data cleaning of the Human Resources dataset, one issue was i
 
 - **Column Removal**: The “HR Data.xlsx” was opened in Excel. After opening the file, I noticed two new columns inside the worksheet. I removed the two columns because they did not provide any useful data. The columns were called “-2” and ”0”. All the data inside contained the same values of “-2” and ”0”.
 
-[pic]
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/error/data_cleaning_column_issues.png)
 
 You can find the clean “HR Data.xlsx” file [here](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/dataset/clean/HR%20Data.xlsx).
 
