@@ -1,30 +1,30 @@
-# Human Resources Analytics Dashboard
+# HR Department Project
 
 ![](human_resources_department.png)
 ---
-## Table of Contents
 
-Project Overview
-Background
-Problem Statement
-Entity Relationship Diagram
-Tools Used
-Skills Applied
-Data Preparation
-Data Cleaning
-Issues Found
-Exploratory Data Analysis 
-Functional Validation
-Data Validation/ Analysis
-Insights & Findings
-Conclusion
+## Table-of-Contents
 
+- Project Overview [Kaggle Walmart Sales Forecasting Competition](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting).
+- Background
+- Problem Statement
+- Entity Relationship Diagram
+- Tools Used
+- Skills Applied
+- Data Preparation
+- Data Cleaning
+- Issues Found
+- Exploratory Data Analysis 
+- Functional Validation
+- Data Validation/ Analysis
+- Insights & Findings
+- Conclusion
 
 ## Project Overview
 
 This employee data analysis project aims to provide insights into the lack of clear trackable performance metrics for the Human Resources Department. By analysing various aspects of the employee data, I hope to identify trends, make data-driven recommendations and gain a deeper understanding of the Human Resources Department’s key performance metrics.
 
-Disclaimer: All datasets and reports do not represent any company, institution or country. This is just a dummy dataset to demonstrate my capabilities in Tableau and SQL.
+*Disclaimer: All datasets and reports do not represent any company, institution or country. This is just a dummy dataset to demonstrate my capabilities in Tableau and SQL.*
 
 ### Project Objectives
 
@@ -36,7 +36,12 @@ Analyse employee data to identify trends in staff performance, education based v
 
 Generate actionable insights from the analysis, empowering decision-makers to make informed and strategic choices that improve the department’s employee satisfaction.
 
-## Background
+## Background 
+[Go to TOC](##table-of-contents)
+
+[create an anchor](#table-of-contents)
+
+
 
 The Human Resources Department is responsible for monitoring and managing various aspects of employee data to ensure the organisation maintains a healthy workforce. However, there is a lack of clear performance indicators to track and analyse key Human Resource metrics. Therefore, there is a need to design and implement a set of KPIs to address the following issues: employee count at the company, attrition count of employees at the company, attrition rate of employees at the company, active employees at the company and average age of employees at the company.
  
