@@ -142,20 +142,39 @@ The data cleaning process involves the following steps:
 
 In the data preparation phase, I performed the following tasks:
 
-> 1. Created a database, setup tables, and imported data.
-
-![](human_resources_department.png)
+> 1. Navigate to MySQL to create a database. Simply click and name it as “hr_data”.
 ---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_naming_table_pre_import.png)
 
-2. Navigate to MySQL to create a database. Simply click and name it as “hr_data”. PIC]
-3. To create tables, open the hr_data database, then right-click on tables and select “Table Data Import Wizard”. PIC]
-4. Select the file you would like to import.PIC]
-5. At the “Select Destination,” choose to create a new table for the data. I named my table “hrdata”. Then click next to proceed. PIC] 
-6. Proceed to define columns by specifying names and corresponding data types, and next once it’s done. PIC]
-7. Continue to click next until the data completes its importation. PIC]
-8. I observed that the import of the hrdata table failed. PIC]
-9. I encountered issues importing my dataset. To rectify this, I reformatted the document into a new .csv file using Excel and reimported the new file into my database.
-10. Following these modifications, successful importation of the dataset was achieved. [PIC]
+> 2. To create tables, open the hr_data database, then right-click on tables and select “Table Data Import Wizard”.
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_table_pre_import_review.png)
+
+> 3. Select the file you would like to import.
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_data_import_locate_file.png)
+
+4. At the “Select Destination,” choose to create a new table for the data. I named my table “hrdata”. Then click next to proceed.
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_data_import_name_table.png)
+ 
+5. Proceed to define columns by specifying names and corresponding data types, and next once it’s done.
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_data_table_fields_import.png)
+
+6. Continue to click next until the data completes its importation.
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_table_data_import_pre_complete.png)
+
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_database_creation_wizard_import_complete.png)
+
+7. I encountered issues importing my dataset. To rectify this, I reformatted the document into a new .csv file using Excel and reimported the new file into my database.
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_data_import_error_message.png)
+
+8. Following these modifications, successful importation of the dataset was achieved.
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_table_imported.png)
 
 [Go to TOC](#table-of-contents)
 
