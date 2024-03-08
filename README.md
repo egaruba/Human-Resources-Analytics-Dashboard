@@ -1,4 +1,4 @@
-# HR Department Project
+# Unlocking HR Performance: A Data-Driven Exploration of Employee Metrics
 
 ![](human_resources_department.png)
 ---
