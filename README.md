@@ -3,7 +3,7 @@
 ![](human_resources_department.png)
 ---
 
-## Table-of-Contents
+## Table of Contents
 
 - Project Overview [Kaggle Walmart Sales Forecasting Competition](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting).
 - Background
