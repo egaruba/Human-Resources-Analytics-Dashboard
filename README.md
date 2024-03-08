@@ -8,7 +8,6 @@
 - [Project Overview](#project-overview)
 - [Background](#background)
 - [Problem Statement](#problem-statement)
-- [Entity Relationship Diagram](#entity-relationship-diagram)
 - [Tools Used](#tools-used)
 - [Skills Applied](#skills-applied)
 - [Data Preparation](#data-preparation)
@@ -46,7 +45,26 @@ The raw dataset contains one .xlsx file named “HR Data.xlsx” and one CSV fil
 
 ## Dataset Description
 
-- **hrdata**: The primary dataset used for this analysis is the ["hrdata.csv" file](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/dataset/clean/hrdata.csv), containing detailed information about each employee at the company. The raw dataset contains 1,470 records of employee data. The file has 1,470 rows and 15 columns. Each record represents a unique employee at the company. The records include various attributes such as gender, employee id number, marital status, age band, age, department, education, job role, education field, business travel, employee count, attrition, attrition label, job satisfaction and active employee. 
+- **hrdata**: The primary dataset used for this analysis is the ["hrdata.csv" file](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/dataset/clean/hrdata.csv), containing detailed information about each employee at the company. The raw dataset contains 1,470 records of employee data. The file has 1,470 rows and 15 columns. Each record represents a unique employee at the company. The records include various attributes such as gender, employee id number, marital status, age band, age, department, education, job role, education field, business travel, employee count, attrition, attrition label, job satisfaction and active employee.
+
+| Column                  | Description                             | Data Type      |
+| :---------------------- | :-------------------------------------- | :------------- |
+| EmployeeID              | Unique identifier for each employee     | VARCHAR(50)    |
+| Gender                  | Gender of the employee                  | VARCHAR(50)    |
+| MaritalStatus           | Marital status of the employee          | VARCHAR(50)    |
+| AgeRange                | Age range of the employee               | VARCHAR(50)    |
+| Age                     | Age of the employee                     | INT            |
+| Department              | Department where the employee works     | VARCHAR(50)    |
+| Education               | Highest education level attained        | VARCHAR(50)    |
+| EducationField          | Field of education specialization       | VARCHAR(50)    |
+| JobRole                 | Role of the employee within the company | VARCHAR(50)    |
+| BusinessTravel          | Frequency of business travel            | VARCHAR(50)    |
+| DistanceFromHome        | Distance from home to workplace         | INT            |
+| OverTime                | Whether employee works overtime	        | VARCHAR(50)    |
+| EmploymentStatus        | Current employment status               | VARCHAR(50)    |
+| JobInvolvement          | Level of job involvement                | INT            |
+| PerformanceRating       | Performance rating of the employee      | INT            |
+
 
 - **HR Data**: The alternative dataset provided for this analysis is the [“HR Data.xlsx" file](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/dataset/clean/HR%20Data.xlsx). It contains additional and more detailed information about each employee at the company.
 The raw dataset contains 1,470 records of employee data. The file has 1,470 rows and 41 columns. Each record represents the same employee data as provided by the "hrdata.csv" file. 
@@ -110,39 +128,24 @@ There is a need to design and visualise charts and graphs to address the followi
 
 The data cleaning process involves the following steps:
 
-1. Data Preparation: This explains how I sourced the Human Resources department dataset for analysis, the structure and the key attributes of our dataset.
+1. **Data Preparation**: This explains how I sourced the Human Resources department dataset for analysis, the structure and the key attributes of our dataset.
 
-2. Data Cleaning: This involves steps taken to clean and preprocess the dataset to ensure its quality and reliability. The techniques used for handling missing values, standardising formats, and cleaning inconsistent data. The dataset was thoroughly examined to understand the structure, columns and their meanings. The data did not have a data dictionary attached.
+2. **Data Cleaning**: This involves steps taken to clean and preprocess the dataset to ensure its quality and reliability. The techniques used for handling missing values, standardising formats, and cleaning inconsistent data. The dataset was thoroughly examined to understand the structure, columns and their meanings. The data did not have a data dictionary attached.
 
-3. Exploratory Data Analysis with SQL: Running SQL queries allows for the unveiling of employee trends, variations via education, employee behaviours and departmental insights. Exploratory Data Analysis is significant in understanding the dataset’s characteristics. The utilisation of more complex SQL techniques allows for deeper analysis, where the advanced SQL functions, window functions, will be used to derive insights beyond standard queries.
+3. **Exploratory Data Analysis with SQL**: Running SQL queries allows for the unveiling of employee trends, variations via education, employee behaviours and departmental insights. Exploratory Data Analysis is significant in understanding the dataset’s characteristics. The utilisation of more complex SQL techniques allows for deeper analysis, where the advanced SQL functions, window functions, will be used to derive insights beyond standard queries.
 
-4. Insights and Recommendations: Summarise the key insights derived from the analysis. Discuss actionable recommendations based on SQL driven insights for enhancing employee satisfaction, optimising staff performance and improving employee experiences.
+4. **Insights and Recommendations**: Summarise the key insights derived from the analysis. Discuss actionable recommendations based on SQL driven insights for enhancing employee satisfaction, optimising staff performance and improving employee experiences.
 
-5. Dashboard Visualisation and Report: A dashboard visualisation that explains each segments and displays Key Performance Indicators to the client.
+5. **Dashboard Visualisation and Report**: A dashboard visualisation that explains each segments and displays Key Performance Indicators to the client.
 
 ## Data Preparation
 
 In the data preparation phase, I performed the following tasks:
 
-1. Created a database, setup tables, and imported data.[PIC]
+> 1. Created a database, setup tables, and imported data.
 
-| Column                  | Description                             | Data Type      |
-| :---------------------- | :-------------------------------------- | :------------- |
-| EmployeeID              | Unique identifier for each employee     | VARCHAR(50)    |
-| Gender                  | Gender of the employee                  | VARCHAR(50)    |
-| MaritalStatus           | Marital status of the employee          | VARCHAR(50)    |
-| AgeRange                | Age range of the employee               | VARCHAR(50)    |
-| Age                     | Age of the employee                     | INT            |
-| Department              | Department where the employee works     | VARCHAR(50)    |
-| Education               | Highest education level attained        | VARCHAR(50)    |
-| EducationField          | Field of education specialization       | VARCHAR(50)    |
-| JobRole                 | Role of the employee within the company | VARCHAR(50)    |
-| BusinessTravel          | Frequency of business travel            | VARCHAR(50)    |
-| DistanceFromHome        | Distance from home to workplace         | INT            |
-| OverTime                | Whether employee works overtime	    | VARCHAR(50)    |
-| EmploymentStatus        | Current employment status               | VARCHAR(50)    |
-| JobInvolvement          | Level of job involvement                | INT            |
-| PerformanceRating       | Performance rating of the employee      | INT            |
+![](human_resources_department.png)
+---
 
 2. Navigate to MySQL to create a database. Simply click and name it as “hr_data”. PIC]
 3. To create tables, open the hr_data database, then right-click on tables and select “Table Data Import Wizard”. PIC]
@@ -185,7 +188,9 @@ As stated previously, my data was clean and did not require further cleaning. Al
 
 During the initial data cleaning of the Human Resources dataset, one issue was identified and resolved:
 
-- Column Removal: The “HR Data.xlsx” was opened in Excel. After opening the file, I noticed two new columns inside the worksheet. I removed the two columns because they did not provide any useful data. The columns were called “-2” and ”0”. All the data inside contained the same values of “-2” and ”0”.
+- **Column Removal**: The “HR Data.xlsx” was opened in Excel. After opening the file, I noticed two new columns inside the worksheet. I removed the two columns because they did not provide any useful data. The columns were called “-2” and ”0”. All the data inside contained the same values of “-2” and ”0”.
+
+[pic]
 
 You can find the clean “HR Data.xlsx” file [here](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/dataset/clean/HR%20Data.xlsx).
 
