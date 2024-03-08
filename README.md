@@ -16,8 +16,8 @@
 - [Issues Found](#issues-found)
 - [Exploratory Data Analysis](#exploratory-data-analysis)
 - [Functional Validation](#functional-validation)
-- [Data Validation/ Analysis](#data-validation/-analysis)
-- [Insights & Findings](#insights&findings)
+- [Data Validation and Analysis](#data-validation-and-analysis)
+- [Insights and Findings](#insights-and-findings)
 - [Conclusion](#conclusion)
 
 ## Project Overview
@@ -232,7 +232,7 @@ Exploratory Data Analysis is utilised when examining employee data in order to a
 | 10                      | Chart Requirement - Attrition Rate by Gender for Different Age Group| ```SELECT age_band, gender, COUNT(attrition) AS Attrition_Count, ROUND(((COUNT(attrition))/ (SELECT COUNT(attrition) FROM hrdata WHERE attrition = "Yes")) * 100, 2) AS Attrition_Rate_By_Gender FROM hrdata WHERE attrition = “Yes" GROUP BY age_band, gender ORDER BY age_band DESC;```    | Pass           | Exact match    |
 | 11                      | Chart Requirement - Job Satisfaction    | ```SELECT job_role, job_satisfaction, SUM(employee_count) AS Satisfaction_Score FROM hrdata GROUP BY job_role, job_satisfaction ORDER BY job_role, job_satisfaction;```            | Pass           | Exact match    |
  
-## Data Validation/ Analysis
+## Data Validation and Analysis
 
 1. What is the total number of employees?
 ```SELECT SUM(employee_count) AS Employee_Count FROM hrdata;```
@@ -305,7 +305,7 @@ Exploratory Data Analysis is utilised when examining employee data in order to a
 
 [Go to TOC](#table-of-contents)
 
-## Insights & Findings
+## Insights and Findings
 
 The analysis results are summarized as follows:
 
