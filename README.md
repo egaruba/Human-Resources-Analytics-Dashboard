@@ -1,6 +1,6 @@
 # Unlocking HR Performance: A Data-Driven Exploration of Employee Metrics
 
-![](human_resources_department.png)
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/human_resources_large_background.jpeg)
 ---
 
 ## Table of Contents
