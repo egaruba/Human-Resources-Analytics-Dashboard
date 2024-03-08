@@ -356,8 +356,8 @@ Exploratory Data Analysis is utilised when examining employee data in order to a
 ![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_active_employees.png)
 ![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_attrition_count.png)
 
-```SELECT SUM(employee_count) - (SELECT COUNT(attrition) FROM hrdata WHERE attrition = “Yes") AS Active_Employees FROM hrdata; 
-SELECT COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = "Yes";```
+```SELECT SUM(employee_count) - (SELECT COUNT(attrition) FROM hrdata WHERE attrition = “Yes") AS Active_Employees FROM hrdata;```
+```SELECT COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = "Yes";```
 
 17. What is the average age of employees?
 ---
