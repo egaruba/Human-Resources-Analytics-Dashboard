@@ -110,9 +110,9 @@ There is a need to design and visualise charts and graphs to address the followi
 
 ## Tools Used
 
-1. Excel - Data Cleaning
-2. MySQL - Data Analysis
-3. Tableau - Creating Visualisations and Reports
+1. **Excel** - Data Cleaning
+2. **MySQL** - Data Analysis
+3. **Tableau** - Creating Visualisations and Reports
 
 ## Skills Applied
 
@@ -168,17 +168,20 @@ The objective of this data cleaning is to improve the data quality by ensuring t
 I used MySQL to complete the cleaning task. Fortunately for me the data was relatively clean and only required minimal cleaning.
 You can find the clean “hrdata.csv” file [here](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/dataset/clean/hrdata.csv).
 
-1. Check the first 5 rows to make sure it imported well.
+1. Check the first 5 rows: This is to make sure the database is working correctly.
+![](human_resources_department.png)
+
 ```SELECT * FROM orders LIMIT 5;```
-Let's see if the database is working correctly. [PIC]
 
-2. Checking for missing values. 
-```SELECT * FROM orders WHERE rowid IS NULL OR orderid IS NULL OR orderdate IS NULL OR shipdate IS NULL;```
-It revealed blank this shows that we have no missing values. [PIC]
+2. Checking for missing values: If there are no records, this shows that we have no missing values.
+![](human_resources_department.png)
 
-3. Checking for duplicate Row.
-```SELECT * FROM orders WHERE (rowid orderid, orderdate, shipdate, shipmode, customerid, customername, sIN ( SELECT rowid, orderid, orderdate, shipdate, shipmode, customerid, customerna FROM orders GROUP BY rowid, orderid, orderdate, shipdate, shipmode, customerid, customer HAVING COUNT(*) > 1)ORDER BY rowid, orderid;```
-The query returns an empty table, showing there are no duplicate rows. [PIC]
+```SELECT * FROM hrdata WHERE emp_no IS NULL OR gender IS NULL OR marital_status IS NULL OR age IS NULL OR age_band IS NULL OR department IS NULL OR education IS NULL OR education_field IS NULL OR job_role IS NULL OR business_travel IS NULL OR employee_count IS NULL OR attrition IS NULL OR attrition_label IS NULL OR job_satisfaction IS NULL OR active_employee IS NULL;```
+
+3. Checking for duplicate row: If the query returns an empty table, it shows there are no duplicate rows.
+![](human_resources_department.png)
+
+```SELECT * FROM hrdata GROUP BY emp_no, gender, marital_status, age, age_band, department, education, education_field, job_role, business_travel, employee_count, attrition, attrition_label, job_satisfaction, active_employee HAVING COUNT(*) > 1;```
 
 ### Data Transformation
 
