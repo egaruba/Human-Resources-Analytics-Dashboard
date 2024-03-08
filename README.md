@@ -24,7 +24,7 @@
 
 This employee data analysis project aims to provide insights into the lack of clear trackable performance metrics for the Human Resources Department. By analysing various aspects of the employee data, I hope to identify trends, make data-driven recommendations and gain a deeper understanding of the Human Resources Department’s key performance metrics.
 
-*Disclaimer: All datasets and reports do not represent any company, institution or country. This is just a dummy dataset to demonstrate my capabilities in Tableau and SQL.*
+> *Disclaimer: All datasets and reports do not represent any company, institution or country. This is just a dummy dataset to demonstrate my capabilities in Tableau and SQL.*
 
 ### Project Objectives
 
@@ -42,7 +42,7 @@ The Human Resources Department is responsible for monitoring and managing variou
  
 ### Dataset Overview
 
-The raw dataset contains one .xlsx file named “HR Data.xlsx” and one CSV file titled “hrdata.csv”. Both of these files were used for this project. You can find the raw datasets [here](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting).
+The raw dataset contains one .xlsx file named “HR Data.xlsx” and one CSV file titled “hrdata.csv”. Both of these files were used for this project. You can find the raw datasets [here](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/tree/main/dataset).
 
 ## Dataset Description
 
@@ -164,7 +164,7 @@ The objective of this data cleaning is to improve the data quality by ensuring t
 ### Data Observation
 
 I used MySQL to complete the cleaning task. Fortunately for me the data was relatively clean and only required minimal cleaning.
-You can find the clean “hrdata.csv” file [here](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting).
+You can find the clean “hrdata.csv” file [here](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/dataset/clean/hrdata.csv).
 
 1. Check the first 5 rows to make sure it imported well.
 ```SELECT * FROM orders LIMIT 5;```
@@ -188,7 +188,7 @@ During the initial data cleaning of the Human Resources dataset, one issue was i
 
 - Column Removal: The “HR Data.xlsx” was opened in Excel. After opening the file, I noticed two new columns inside the worksheet. I removed the two columns because they did not provide any useful data. The columns were called “-2” and ”0”. All the data inside contained the same values of “-2” and ”0”.
 
-You can find the clean “HR Data.xlsx” file [here](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting).
+You can find the clean “HR Data.xlsx” file [here](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/dataset/clean/HR%20Data.xlsx).
 
 [Go to TOC](#table-of-contents)
 
@@ -235,6 +235,8 @@ Exploratory Data Analysis is utilised when examining employee data in order to a
 ## Data Validation and Analysis
 
 1. What is the total number of employees?
+---
+
 ```SELECT SUM(employee_count) AS Employee_Count FROM hrdata;```
 
 2. What is the total number of employees in the Sales Department?
@@ -341,19 +343,28 @@ Based on the analysis, I recommend the following actions:
 
 ## Limitations
 
-1. Lack of detailed information on job satisfaction and engagement levels.
-2. Limited historical data for trend analysis.
-3. Absence of specific reasons for employee attrition.
-4. Data may not capture employees on leave or temporary assignments effectively.
-5. Limited diversity in educational backgrounds and job roles represented in the dataset.
+Based on the analysis, I discovered the following limitations:
+
+1. Lack of detailed information on job satisfaction and engagement levels:
+The available data doesn't provide a thorough understanding of how satisfied employees are with their jobs or how engaged they are in their work. Without this information, it's challenging to gauge their overall happiness and commitment to the organization.
+
+2. Limited historical data for trend analysis:
+There isn't enough past data available to analyze trends over time effectively. Historical data helps identify patterns and changes in employee behavior or performance, which can inform future strategies and decisions.
+
+3. Absence of specific reasons for employee attrition:
+The data doesn't specify why employees are leaving the company. Knowing the reasons behind attrition is crucial for addressing underlying issues and implementing retention strategies to reduce turnover.
+
+4. Data may not capture employees on leave or temporary assignments effectively:
+The data might not accurately reflect employees who are on leave or working in temporary roles. This could lead to incomplete insights into workforce capacity and productivity.
+
+5. Limited diversity in educational backgrounds and job roles represented in the dataset:
+The dataset lacks variety in terms of employees' educational backgrounds and the roles they hold within the organization. A more diverse dataset would provide a richer understanding of the workforce and could uncover insights that are currently overlooked.
 
 [Go to TOC](#table-of-contents)
 
 ## Conclusion
 
-This study highlights the critical role of data analysis in optimizing workforce management strategies and fostering a supportive work environment. By leveraging insights from employee demographics and attrition rates, organizations can tailor their HR policies and practices to enhance employee engagement, retention, and overall organizational success.
-
-My data analysis results are summarized as follows:
+> This study highlights the critical role of data analysis in optimizing workforce management strategies and fostering a supportive work environment. By leveraging insights from employee demographics and attrition rates, organizations can tailor their HR policies and practices to enhance employee engagement, retention, and overall organizational success.
 
 The analysis of employee demographics, attrition rates, active employee numbers, and average age underscores the importance of data-driven decision-making in human resource management. In terms of employee demographics, the company currently employs 1,470 individuals, with a gender distribution of 882 males and 588 females. This understanding of gender representation is pivotal for fostering diversity and inclusion initiatives within the organization. Furthermore, the examination of attrition rates unveils that a total of 237 employees have left, resulting in a 16.12% attrition rate. Importantly, variations in attrition rates are observed between genders and departments, underscoring the necessity for targeted retention strategies tailored to specific groups. 
 
