@@ -169,17 +169,17 @@ I used MySQL to complete the cleaning task. Fortunately for me the data was rela
 You can find the clean “hrdata.csv” file [here](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/dataset/clean/hrdata.csv).
 
 1. Check the first 5 rows: This is to make sure the database is working correctly.
-![](human_resources_department.png)
+![5 rows](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_select_5_rows.png)
 
 ```SELECT * FROM orders LIMIT 5;```
 
 2. Checking for missing values: If there are no records, this shows that we have no missing values.
-![](human_resources_department.png)
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_select_not_null.png)
 
 ```SELECT * FROM hrdata WHERE emp_no IS NULL OR gender IS NULL OR marital_status IS NULL OR age IS NULL OR age_band IS NULL OR department IS NULL OR education IS NULL OR education_field IS NULL OR job_role IS NULL OR business_travel IS NULL OR employee_count IS NULL OR attrition IS NULL OR attrition_label IS NULL OR job_satisfaction IS NULL OR active_employee IS NULL;```
 
 3. Checking for duplicate row: If the query returns an empty table, it shows there are no duplicate rows.
-![](human_resources_department.png)
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_check_for_duplicate_rows.png)
 
 ```SELECT * FROM hrdata GROUP BY emp_no, gender, marital_status, age, age_band, department, education, education_field, job_role, business_travel, employee_count, attrition, attrition_label, job_satisfaction, active_employee HAVING COUNT(*) > 1;```
 
