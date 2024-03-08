@@ -47,7 +47,7 @@ The raw dataset contains one .xlsx file named “HR Data.xlsx” and one CSV fil
 ## Dataset Description
 
 - hrdata: The primary dataset used for this analysis is the "hrdata.csv" file, containing detailed information about each employee at the company.
-The raw dataset contains 1,470 records of employee data. The file has 1,470 rows and 15 columns. Each record represents a unique employee at the company. The records include various attributes such as gender, employee id number, marital status, age band, age, department, education, job role, education field, business travel, employee count, attrition, attrition label, job satisfaction and active employee.
+The raw dataset contains 1,470 records of employee data. The file has 1,470 rows and 15 columns. Each record represents a unique employee at the company. The records include various attributes such as gender, employee id number, marital status, age band, age, department, education, job role, education field, business travel, employee count, attrition, attrition label, job satisfaction and active employee. 
 
 - HR Data: The alternative dataset provided for this analysis is the “HR Data.xlsx" file. It contains additional and more detailed information about each employee at the company.
 The raw dataset contains 1,470 records of employee data. The file has 1,470 rows and 41 columns. Each record represents the same employee data as provided by the "hrdata.csv" file. 
@@ -123,22 +123,24 @@ The data cleaning process involves the following steps:
 
 ## Data Preparation
 
-Field Name	Description	Data Type
-EmployeeID	Unique identifier for each employee	VARCHAR(50)
-Gender	Gender of the employee	VARCHAR(50)
-MaritalStatus	Marital status of the employee	VARCHAR(50)
-AgeRange	Age range of the employee	VARCHAR(50)
-Age	Age of the employee	INT
-Department	Department where the employee works	VARCHAR(50)
-Education	Highest education level attained	VARCHAR(50)
-EducationField	Field of education specialization	VARCHAR(50)
-JobRole	Role of the employee within the company	VARCHAR(50)
-BusinessTravel	Frequency of business travel	VARCHAR(50)
-DistanceFromHome	Distance from home to workplace	INT
-OverTime	Whether employee works overtime	VARCHAR(50)
-EmploymentStatus	Current employment status	VARCHAR(50)
-JobInvolvement	Level of job involvement	INT
-PerformanceRating	Performance rating of the employee	INT
+| Column                  | Description                             | Data Type      |
+| :---------------------- | :-------------------------------------- | :------------- |
+| EmployeeID              | Unique identifier for each employee     | VARCHAR(50)    |
+| Gender                  | Gender of the employee                  | VARCHAR(50)    |
+| MaritalStatus           | Marital status of the employee          | VARCHAR(50)    |
+| AgeRange                | Age range of the employee               | VARCHAR(50)    |
+| Age                     | Age of the employee                     | INT            |
+| Department              | Department where the employee works     | VARCHAR(50)    |
+| Education               | Highest education level attained        | VARCHAR(50)    |
+| EducationField          | Field of education specialization       | VARCHAR(50)    |
+| JobRole                 | Role of the employee within the company | VARCHAR(50)    |
+| BusinessTravel          | Frequency of business travel            | VARCHAR(50)    |
+| DistanceFromHome        | Distance from home to workplace         | INT            |
+| OverTime                | Whether employee works overtime	    | VARCHAR(50)    |
+| EmploymentStatus        | Current employment status               | VARCHAR(50)    |
+| JobInvolvement          | Level of job involvement                | INT            |
+| PerformanceRating       | Performance rating of the employee      | INT            |
+| gross_income            | Gross Income                            | DECIMAL(10, 2) |
 
 In the data preparation phase, I performed the following tasks:
 
