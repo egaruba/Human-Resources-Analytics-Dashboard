@@ -5,20 +5,20 @@
 
 ## Table of Contents
 
-- Project Overview 
-- Background
-- Problem Statement
-- Entity Relationship Diagram
-- Tools Used
-- Skills Applied
-- Data Preparation
-- Data Cleaning
-- Issues Found
-- Exploratory Data Analysis 
-- Functional Validation
-- Data Validation/ Analysis
-- Insights & Findings
-- Conclusion
+- [Project Overview](#project-overview)
+- [Background](#background)
+- [Problem Statement](#problem-statement)
+- [Entity Relationship Diagram](#entity-relationship-diagram)
+- [Tools Used](#tools-used)
+- [Skills Applied](#skills-applied)
+- [Data Preparation](#data-preparation)
+- [Data Cleaning](#data-cleaning)
+- [Issues Found](#issues-found)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Functional Validation](#functional-validation)
+- [Data Validation/ Analysis](#data-validation/-analysis)
+- [Insights & Findings](#insights&findings)
+- [Conclusion](#conclusion)
 
 ## Project Overview
 
@@ -144,7 +144,6 @@ In the data preparation phase, I performed the following tasks:
 | EmploymentStatus        | Current employment status               | VARCHAR(50)    |
 | JobInvolvement          | Level of job involvement                | INT            |
 | PerformanceRating       | Performance rating of the employee      | INT            |
-| gross_income            | Gross Income                            | DECIMAL(10, 2) |
 
 2. Navigate to MySQL to create a database. Simply click and name it as “hr_data”. PIC]
 3. To create tables, open the hr_data database, then right-click on tables and select “Table Data Import Wizard”. PIC]
@@ -245,7 +244,7 @@ Exploratory Data Analysis is utilised when examining employee data in order to a
 ```SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE department = “HR”;```
 
 4. What is the total number of employees in the R&D Department?
-```SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE department = “R&D”;
+```SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE department = “R&D”;```
 
 5. What is the total number of employees with a High School Diploma?
 ```SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE education = "High School”;```
@@ -372,7 +371,4 @@ Regarding active employees, the current workforce capacity is reflected by 1,233
   ![](Specialcharactersbefore.png)| ![](Specialcharacterafter.png)                                      
   
   
-  ## Name,Long_name and ID
-  The dataset does not consist of duplicate data, so the next line of action was to check the data types of each column. Beginning with the ID,Name, and Long_name 
-  columns respectively, these columns had the right data type and didn't contain inconsistent data so it was left in its original state.
  
