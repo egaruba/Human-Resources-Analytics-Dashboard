@@ -274,66 +274,131 @@ Exploratory Data Analysis is utilised when examining employee data in order to a
 ```SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE department = “Sales”;```
 
 3. What is the total number of employees in the HR Department?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_employee_count_by_hr_department.png)
+
 ```SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE department = “HR”;```
 
 4. What is the total number of employees in the R&D Department?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_employee_count_by_rd_department.png)
+
 ```SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE department = “R&D”;```
 
 5. What is the total number of employees with a High School Diploma?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_high_school.png)
+
 ```SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE education = "High School”;```
 
 6. What is the total number of employees with a Bachelor’s Degree?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_employee_count_by_bachelors_degree.png)
+
 ```SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE education = “Bachelor’s Degree”;```
 
 7. What is the total number of employees with a Doctoral Degree?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_employee_count_by_doctoral_degree.png)
+
 ```SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE education = “Doctoral Degree”;```
 
 8. What is the total number of employees with an Associates Degree?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_employee_count_by_associates_degree.png)
+
 ```SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE education = “Associates Degree”;```
 
 9. What is the total number of employees with a Master’s Degree?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_employee_count_by_masters_degree.png)
+
 ```SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE education = “Master’s Degree”;```
 
 10. What is the number of employees who have left the organisation?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_attrition_count.png)
+
 ```SELECT COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = “Yes";```
 
 11. What is the number of employees who have left the organisation in the Sales Department?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_attrition_count.png)
+
 ```SELECT COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = “Yes” && department = “Sales";```
 
 12. What is the number of employees who have left the organisation in the HR Department?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_attrition_count.png)
+
 ```SELECT COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = “Yes" WHERE attrition = “Yes” && department = “HR";```
 
 13. What is the number of employees who have left the organisation in the R&D Department?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_attrition_count.png)
+
 ```SELECT COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = "Yes" WHERE attrition = “Yes” && department = “R&D”;```
 
 14. What is the number of employees who have not left the organisation?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_active_employees.png)
+
 ```SELECT SUM(employee_count) - (SELECT COUNT(attrition) FROM hrdata WHERE attrition = “Yes") AS Active_Employees FROM hrdata;```
 
 15. What is the overall turnover level or attrition rate of the organisation?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_attrition_rate.png)
+
 ```SELECT ROUND(((SELECT COUNT(attrition) FROM hrdata WHERE attrition = "Yes")/SUM(employee_count)) * 100, 2) AS Attrition_Rate FROM hrdata;```
 
-16. What is the difference between active and inactive employees?
-```SELECT SUM(employee_count) - (SELECT COUNT(attrition) FROM hrdata WHERE attrition = “Yes") AS Active_Employees FROM hrdata; SELECT COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = "Yes" WHERE attrition = “Yes”;```
+> 16. What is the difference between active and inactive employees?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_active_employees.png)
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_attrition_count.png)
+
+```SELECT SUM(employee_count) - (SELECT COUNT(attrition) FROM hrdata WHERE attrition = “Yes") AS Active_Employees FROM hrdata; 
+SELECT COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = "Yes";```
 
 17. What is the average age of employees?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_average_age.png)
+
 ```SELECT ROUND(AVG(age), 0) AS Average_Age FROM hrdata;```
 
 18. What are the attrition patterns based on gender?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_attrition_count_by_gender.png)
+
 ```SELECT gender, COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = “Yes" GROUP BY gender ORDER BY COUNT(attrition) DESC;```
 
 19. What are the attrition rates across the different departments?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_attrition_rate_by_department.png)
+
 ```SELECT department, COUNT(attrition) AS Attrition_Count, ROUND(((COUNT(attrition))/ (SELECT COUNT(attrition) FROM hrdata WHERE attrition = "Yes")) * 100, 2) AS Attrition_Rate FROM hrdata WHERE attrition = “Yes" GROUP BY department ORDER BY COUNT(attrition) DESC;```
 
 20. What are the distribution of employees across various age groups?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_employee_count_order_by_age.png)
+
 ```SELECT age, SUM(employee_count) AS Employee_Count FROM hrdata GROUP BY age ORDER BY age;```
 
 21. What are the employee engagement and overall job satisfaction ratings?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_job_satisfaction.png)
+
 ```SELECT job_role, job_satisfaction, SUM(employee_count) AS Satisfaction_Score FROM hrdata GROUP BY job_role, job_satisfaction ORDER BY job_role, job_satisfaction;```
 
 22. What are the attrition rates based on educational background?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_attrition_count_by_education.png)
+
 ```SELECT education_field, COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = “Yes" GROUP BY education_field ORDER BY COUNT(attrition) DESC;```
 
 23. What are the attrition rates based on gender and different age groups?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_attrition_count_by_age_group_by_gender.png)
+
 ```SELECT age_band, gender, COUNT(attrition) AS Attrition_Count, ROUND(((COUNT(attrition))/ (SELECT COUNT(attrition) FROM hrdata WHERE attrition = "Yes")) * 100, 2) AS Attrition_Rate_By_Gender FROM hrdata WHERE attrition = “Yes" GROUP BY age_band, gender ORDER BY age_band DESC;```
 
 [Go to TOC](#table-of-contents)
