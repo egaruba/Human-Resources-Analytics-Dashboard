@@ -397,15 +397,3 @@ The analysis of employee demographics, attrition rates, active employee numbers,
 Regarding active employees, the current workforce capacity is reflected by 1,233 individuals, providing valuable insights into productivity levels and resource allocation. Additionally, with the average age of employees standing at 37, there exists a notable influence on recruitment practices and succession planning efforts. Future research could delve deeper into understanding the underlying reasons behind gender and departmental variations in attrition rates, enabling the development access to more effective employee retention strategies. Additionally, exploring the impact of age diversity on team dynamics and organizational performance could provide valuable insights for talent management practices going forward.
 
 [Go to TOC](#table-of-contents)
-
-
- ## Special Characters
-  After importing the data to power query editor in excel, I changed the file origin to UTF-8 encoding,this automatically removed the special characters and replaced 
-  it with the appropriate letter.
-  
-   |Special character Before  | Special character After                           |                                 
-  ---------------------------:|:-----------------------------------
-  ![](Specialcharactersbefore.png)| ![](Specialcharacterafter.png)                                      
-  
-  
- 
