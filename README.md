@@ -17,6 +17,7 @@
 - [Functional Validation](#functional-validation)
 - [Data Validation and Analysis](#data-validation-and-analysis)
 - [Insights and Findings](#insights-and-findings)
+- [Dashboard Visualization](#dashboard-visualization)
 - [Conclusion](#conclusion)
 
 ## Project Overview
@@ -262,10 +263,14 @@ Exploratory Data Analysis is utilised when examining employee data in order to a
 
 1. What is the total number of employees?
 ---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_select_employee_count.png)
 
 ```SELECT SUM(employee_count) AS Employee_Count FROM hrdata;```
 
 2. What is the total number of employees in the Sales Department?
+---
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/sql_employee_count_by_sales_department.png)
+
 ```SELECT SUM(employee_count) AS Employee_Count FROM hrdata WHERE department = “Sales”;```
 
 3. What is the total number of employees in the HR Department?
@@ -385,6 +390,11 @@ The data might not accurately reflect employees who are on leave or working in t
 
 5. Limited diversity in educational backgrounds and job roles represented in the dataset:
 The dataset lacks variety in terms of employees' educational backgrounds and the roles they hold within the organization. A more diverse dataset would provide a richer understanding of the workforce and could uncover insights that are currently overlooked.
+
+[Go to TOC](#table-of-contents)
+
+## Dashboard Visualization
+![](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/dashboard/dashboard_main.png)
 
 [Go to TOC](#table-of-contents)
 
