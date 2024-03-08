@@ -123,6 +123,10 @@ The data cleaning process involves the following steps:
 
 ## Data Preparation
 
+In the data preparation phase, I performed the following tasks:
+
+1. Created a database, setup tables, and imported data.[PIC]
+
 | Column                  | Description                             | Data Type      |
 | :---------------------- | :-------------------------------------- | :------------- |
 | EmployeeID              | Unique identifier for each employee     | VARCHAR(50)    |
@@ -142,18 +146,15 @@ The data cleaning process involves the following steps:
 | PerformanceRating       | Performance rating of the employee      | INT            |
 | gross_income            | Gross Income                            | DECIMAL(10, 2) |
 
-In the data preparation phase, I performed the following tasks:
-
-Created a database, setup tables, and imported data.[PIC]
-Navigate to MySQL to create a database. Simply click and name it as “hr_data”. PIC]
-To create tables, open the hr_data database, then right-click on tables and select “Table Data Import Wizard”. PIC]
-Select the file you would like to import.PIC]
-At the “Select Destination,” choose to create a new table for the data. I named my table “hrdata”. Then click next to proceed. PIC] 
-Proceed to define columns by specifying names and corresponding data types, and next once it’s done. PIC]
-Continue to click next until the data completes its importation. PIC]
-I observed that the import of the hrdata table failed. PIC]
-I encountered issues importing my dataset. To rectify this, I reformatted the document into a new .csv file using Excel and reimported the new file into my database.
-Following these modifications, successful importation of the dataset was achieved. [PIC]
+2. Navigate to MySQL to create a database. Simply click and name it as “hr_data”. PIC]
+3. To create tables, open the hr_data database, then right-click on tables and select “Table Data Import Wizard”. PIC]
+4. Select the file you would like to import.PIC]
+5. At the “Select Destination,” choose to create a new table for the data. I named my table “hrdata”. Then click next to proceed. PIC] 
+6. Proceed to define columns by specifying names and corresponding data types, and next once it’s done. PIC]
+7. Continue to click next until the data completes its importation. PIC]
+8. I observed that the import of the hrdata table failed. PIC]
+9. I encountered issues importing my dataset. To rectify this, I reformatted the document into a new .csv file using Excel and reimported the new file into my database.
+10. Following these modifications, successful importation of the dataset was achieved. [PIC]
 
 [Go to TOC](#table-of-contents)
 
