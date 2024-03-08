@@ -46,10 +46,9 @@ The raw dataset contains one .xlsx file named “HR Data.xlsx” and one CSV fil
 
 ## Dataset Description
 
-- hrdata: The primary dataset used for this analysis is the "hrdata.csv" file, containing detailed information about each employee at the company.
-The raw dataset contains 1,470 records of employee data. The file has 1,470 rows and 15 columns. Each record represents a unique employee at the company. The records include various attributes such as gender, employee id number, marital status, age band, age, department, education, job role, education field, business travel, employee count, attrition, attrition label, job satisfaction and active employee. 
+- **hrdata**: The primary dataset used for this analysis is the ["hrdata.csv" file](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/dataset/clean/hrdata.csv), containing detailed information about each employee at the company. The raw dataset contains 1,470 records of employee data. The file has 1,470 rows and 15 columns. Each record represents a unique employee at the company. The records include various attributes such as gender, employee id number, marital status, age band, age, department, education, job role, education field, business travel, employee count, attrition, attrition label, job satisfaction and active employee. 
 
-- HR Data: The alternative dataset provided for this analysis is the “HR Data.xlsx" file. It contains additional and more detailed information about each employee at the company.
+- **HR Data**: The alternative dataset provided for this analysis is the [“HR Data.xlsx" file](https://github.com/egaruba/Human-Resources-Analytics-Dashboard/blob/main/dataset/clean/HR%20Data.xlsx). It contains additional and more detailed information about each employee at the company.
 The raw dataset contains 1,470 records of employee data. The file has 1,470 rows and 41 columns. Each record represents the same employee data as provided by the "hrdata.csv" file. 
 The additional information not previously provided includes attributes such as over 18, training times last year, -2, 0, daily rate, distance from home, environment satisfaction, hourly rate, job involvement, job level, monthly income, monthly rate, number of companies worked, percent salary hike, performance rating, relationship satisfaction, standard hours, stock option level, total working years, work life balance, years at the company, years in current role, years since last promotion and years with current manager.
 
