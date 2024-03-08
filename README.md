@@ -5,7 +5,7 @@
 
 ## Table of Contents
 
-- Project Overview [Kaggle Walmart Sales Forecasting Competition](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting).
+- Project Overview 
 - Background
 - Problem Statement
 - Entity Relationship Diagram
@@ -28,35 +28,32 @@ This employee data analysis project aims to provide insights into the lack of cl
 
 ### Project Objectives
 
-Assess the performance of different employees within the Human Resources Department, identifying areas of high attrition and opportunities for job satisfaction. 
+- Assess the performance of different employees within the Human Resources Department, identifying areas of high attrition and opportunities for job satisfaction. 
 
-Explore staff patterns, segmentations, and preferences through SQL queries, aiming to improve job satisfaction.
+- Explore staff patterns, segmentations, and preferences through SQL queries, aiming to improve job satisfaction.
 
-Analyse employee data to identify trends in staff performance, education based variations and gender preferences to make informed data driven decisions.
+- Analyse employee data to identify trends in staff performance, education based variations and gender preferences to make informed data driven decisions.
 
-Generate actionable insights from the analysis, empowering decision-makers to make informed and strategic choices that improve the department’s employee satisfaction.
+- Generate actionable insights from the analysis, empowering decision-makers to make informed and strategic choices that improve the department’s employee satisfaction.
 
 ## Background 
-[Go to TOC](##table-of-contents)
-
-[create an anchor](#table-of-contents)
-
-
 
 The Human Resources Department is responsible for monitoring and managing various aspects of employee data to ensure the organisation maintains a healthy workforce. However, there is a lack of clear performance indicators to track and analyse key Human Resource metrics. Therefore, there is a need to design and implement a set of KPIs to address the following issues: employee count at the company, attrition count of employees at the company, attrition rate of employees at the company, active employees at the company and average age of employees at the company.
  
 ### Dataset Overview
 
-The raw dataset contains one .xlsx file named “HR Data.xlsx” and one CSV file titled “hrdata.csv”. Both of these files were used for this project.
+The raw dataset contains one .xlsx file named “HR Data.xlsx” and one CSV file titled “hrdata.csv”. Both of these files were used for this project. You can find the raw datasets [here](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting).
 
 ## Dataset Description
 
-hrdata: The primary dataset used for this analysis is the "hrdata.csv" file, containing detailed information about each employee at the company.
+- hrdata: The primary dataset used for this analysis is the "hrdata.csv" file, containing detailed information about each employee at the company.
 The raw dataset contains 1,470 records of employee data. The file has 1,470 rows and 15 columns. Each record represents a unique employee at the company. The records include various attributes such as gender, employee id number, marital status, age band, age, department, education, job role, education field, business travel, employee count, attrition, attrition label, job satisfaction and active employee.
 
-HR Data: The alternative dataset provided for this analysis is the “HR Data.xlsx" file. It contains additional and more detailed information about each employee at the company.
+- HR Data: The alternative dataset provided for this analysis is the “HR Data.xlsx" file. It contains additional and more detailed information about each employee at the company.
 The raw dataset contains 1,470 records of employee data. The file has 1,470 rows and 41 columns. Each record represents the same employee data as provided by the "hrdata.csv" file. 
 The additional information not previously provided includes attributes such as over 18, training times last year, -2, 0, daily rate, distance from home, environment satisfaction, hourly rate, job involvement, job level, monthly income, monthly rate, number of companies worked, percent salary hike, performance rating, relationship satisfaction, standard hours, stock option level, total working years, work life balance, years at the company, years in current role, years since last promotion and years with current manager.
+
+[Go to TOC](#table-of-contents)
 
 ## Problem Statement
 
@@ -66,59 +63,63 @@ The Human Resources Department is responsible for monitoring and managing variou
 
 There is a need to analyse and implement a set of KPIs to address the following issues:
 
-Employee Count at the Company: The Human Resources Department lacks visibility into the total number of employees, making it challenging to assess workforce size and plan for future growth or downsizing effectively.
+- Employee Count at the Company: The Human Resources Department lacks visibility into the total number of employees, making it challenging to assess workforce size and plan for future growth or downsizing effectively.
 
-Attrition Count of Employees at the Company: The organisation lacks a standardised method to track employee attrition, resulting in incomplete and unreliable data on the number of employees who have left the organisation. 
+- Attrition Count of Employees at the Company: The organisation lacks a standardised method to track employee attrition, resulting in incomplete and unreliable data on the number of employees who have left the organisation. 
 
-Attrition Rate of Employees at the Company: Without a clear measure of attrition rate, the organization cannot assess the overall turnover level or compare it with industry benchmarks, hindering the ability to gauge employee satisfaction and engagement.
+- Attrition Rate of Employees at the Company: Without a clear measure of attrition rate, the organization cannot assess the overall turnover level or compare it with industry benchmarks, hindering the ability to gauge employee satisfaction and engagement.
 
-Active Employees at the Company: The organisation lacks a mechanism to differentiate between active and inactive employees, leading to difficulties in accurately assessing the current workforces’s productivity and capacity.
+- Active Employees at the Company: The organisation lacks a mechanism to differentiate between active and inactive employees, leading to difficulties in accurately assessing the current workforces’s productivity and capacity.
 
-Average Age of Employees at the Company: The Human Resources Department lacks visibility into the average age of employees, making it difficult to evaluate workforce demographics, succession planning, and the organisation’s ability to attract and retain younger talent.
+- Average Age of Employees at the Company: The Human Resources Department lacks visibility into the average age of employees, making it difficult to evaluate workforce demographics, succession planning, and the organisation’s ability to attract and retain younger talent.
 
 ### Chart Requirements
 
 There is a need to design and visualise charts and graphs to address the following issues:
 
-Attrition by Gender at the Company: The Human Resources faces challenges in understanding the attrition patterns based on gender, making it difficult to identify any gender-related disparities and implement targeted retention strategies.
+- Attrition by Gender at the Company: The Human Resources faces challenges in understanding the attrition patterns based on gender, making it difficult to identify any gender-related disparities and implement targeted retention strategies.
 
-Attrition by Department at the Company: The Human Resources Department lacks visualisations to showcase attrition rates across different departments. This hinders their ability to identify departments with higher attrition rates and address any underlying issues or concerns effectively. 
+- Attrition by Department at the Company: The Human Resources Department lacks visualisations to showcase attrition rates across different departments. This hinders their ability to identify departments with higher attrition rates and address any underlying issues or concerns effectively. 
 
-Number of Employees by Age Group at the Company: The Human Resources Department requires visual representations to analyse the distribution of employees across various age groups. This helps in assessing workforce demographics, identifying any age-related gaps or imbalances, and implementing targeting Human Resource policies or programs.
+- Number of Employees by Age Group at the Company: The Human Resources Department requires visual representations to analyse the distribution of employees across various age groups. This helps in assessing workforce demographics, identifying any age-related gaps or imbalances, and implementing targeting Human Resource policies or programs.
 
-Job Satisfaction Ratings at the Company: The Human Resources Department lacks visualisations to represent job satisfaction ratings, hindering their ability to measure employee engagement and overall job satisfaction.
+- Job Satisfaction Ratings at the Company: The Human Resources Department lacks visualisations to represent job satisfaction ratings, hindering their ability to measure employee engagement and overall job satisfaction.
 
-Attrition by Education at the Company: The Human Resources Department requires visual representations to analyse attrition rates based on education fields. This helps identify specific educational backgrounds that may be associated with higher attrition, enabling the organisation to tailor retention strategies accordingly.
+- Attrition by Education at the Company: The Human Resources Department requires visual representations to analyse attrition rates based on education fields. This helps identify specific educational backgrounds that may be associated with higher attrition, enabling the organisation to tailor retention strategies accordingly.
 
-Attrition Rate by Gender for Age Groups at the Company:  The Human Resources lacks visualisations that display attrition rates based on gender and different age groups. This makes it challenging to identify any age and gender-related attrition trends, preventing the organisation from implementing targeted retention strategies for specific employee segments.
+- Attrition Rate by Gender for Age Groups at the Company:  The Human Resources lacks visualisations that display attrition rates based on gender and different age groups. This makes it challenging to identify any age and gender-related attrition trends, preventing the organisation from implementing targeted retention strategies for specific employee segments.
+
+[Go to TOC](#table-of-contents)
 
 ## Tools Used
 
-Excel - Data Cleaning
-MySQL - Data Analysis
-Tableau - Creating Visualisations and Reports
+1. Excel - Data Cleaning
+2. MySQL - Data Analysis
+3. Tableau - Creating Visualisations and Reports
 
 ## Skills Applied
 
-Data Validation using SQL
-Database Creation
-SQL Functions: SELECT, INSERT, GROUP BY, WHERE, ORDER BY, etc.
-Functional Validation
-Aggregations
+1. Data Validation using SQL
+2. Database Creation
+3. SQL Functions
+4. Functional Validation
+5. Aggregations
+
+[Go to TOC](#table-of-contents)
 
 ### Data Cleaning Process
 
 The data cleaning process involves the following steps:
 
-Data Preparation: This explains how I sourced the Human Resources department dataset for analysis, the structure and the key attributes of our dataset.
+1. Data Preparation: This explains how I sourced the Human Resources department dataset for analysis, the structure and the key attributes of our dataset.
 
-Data Cleaning: This involves steps taken to clean and preprocess the dataset to ensure its quality and reliability. The techniques used for handling missing values, standardising formats, and cleaning inconsistent data. The dataset was thoroughly examined to understand the structure, columns and their meanings. The data did not have a data dictionary attached.
+2. Data Cleaning: This involves steps taken to clean and preprocess the dataset to ensure its quality and reliability. The techniques used for handling missing values, standardising formats, and cleaning inconsistent data. The dataset was thoroughly examined to understand the structure, columns and their meanings. The data did not have a data dictionary attached.
 
-Exploratory Data Analysis with SQL: Running SQL queries allows for the unveiling of employee trends, variations via education, employee behaviours and departmental insights. Exploratory Data Analysis is significant in understanding the dataset’s characteristics. The utilisation of more complex SQL techniques allows for deeper analysis, where the advanced SQL functions, window functions, will be used to derive insights beyond standard queries.
+3. Exploratory Data Analysis with SQL: Running SQL queries allows for the unveiling of employee trends, variations via education, employee behaviours and departmental insights. Exploratory Data Analysis is significant in understanding the dataset’s characteristics. The utilisation of more complex SQL techniques allows for deeper analysis, where the advanced SQL functions, window functions, will be used to derive insights beyond standard queries.
 
-Insights and Recommendations: Summarise the key insights derived from the analysis. Discuss actionable recommendations based on SQL driven insights for enhancing employee satisfaction, optimising staff performance and improving employee experiences.
+4. Insights and Recommendations: Summarise the key insights derived from the analysis. Discuss actionable recommendations based on SQL driven insights for enhancing employee satisfaction, optimising staff performance and improving employee experiences.
 
-Dashboard Visualisation and Report: A dashboard visualisation that explains each segments and displays Key Performance Indicators to the client.
+5. Dashboard Visualisation and Report: A dashboard visualisation that explains each segments and displays Key Performance Indicators to the client.
 
 ## Data Preparation
 
@@ -152,6 +153,8 @@ I observed that the import of the hrdata table failed. PIC]
 I encountered issues importing my dataset. To rectify this, I reformatted the document into a new .csv file using Excel and reimported the new file into my database.
 Following these modifications, successful importation of the dataset was achieved. [PIC]
 
+[Go to TOC](#table-of-contents)
+
 ## Data Cleaning
 
 The objective of this data cleaning is to improve the data quality by ensuring the data is accurate, complete, valid, and consistent before the data analysis phase. 
@@ -177,6 +180,8 @@ Column Removal: The “HR Data.xlsx” was opened in Excel. After opening the fi
 
 You can find the clean “HR Data.xlsx” file here.
 
+[Go to TOC](#table-of-contents)
+
 ## Exploratory Data Analysis
 
 Exploratory Data Analysis is utilised when examining employee data in order to answer key questions, such as:
@@ -198,6 +203,8 @@ How is the workforce stratified across distinct age cohorts?
 What quantifiable metrics inform us of employee engagement and overarching job satisfaction levels?
 How do attrition rates stratify across disparate educational backgrounds within the employee pool?
 What nuanced patterns emerge in attrition rates predicated upon both gender and discrete age cohorts?
+
+[Go to TOC](#table-of-contents)
 
 ## Functional Validation
 
@@ -270,6 +277,8 @@ What are the employee engagement and overall job satisfaction ratings? SELECT jo
 What are the attrition rates based on educational background? SELECT education_field, COUNT(attrition) AS Attrition_Count FROM hrdata WHERE attrition = “Yes" GROUP BY education_field ORDER BY COUNT(attrition) DESC;
 What are the attrition rates based on gender and different age groups? SELECT age_band, gender, COUNT(attrition) AS Attrition_Count, ROUND(((COUNT(attrition))/ (SELECT COUNT(attrition) FROM hrdata WHERE attrition = "Yes")) * 100, 2) AS Attrition_Rate_By_Gender FROM hrdata WHERE attrition = “Yes" GROUP BY age_band, gender ORDER BY age_band DESC;
 
+[Go to TOC](#table-of-contents)
+
 ## Insights & Findings
 
 The analysis results are summarized as follows:
@@ -288,6 +297,8 @@ The R&D Department has the highest attrition rate. The fact that the R&D Departm
 The rate of attrition for the Sales department is 38.82% with 92 staff leaving.
 The number of active employees at the company is 1,233. Understanding the proportion of active employees helps in assessing current workforce capacity.
 The average age of a staff member at the organisation is 37. Deviations from industry norms in average employee age may signal potential issues in attracting and retaining younger talent.
+
+[Go to TOC](#table-of-contents)
 
 ## Recommendations
 
@@ -310,6 +321,8 @@ Absence of specific reasons for employee attrition.
 Data may not capture employees on leave or temporary assignments effectively.
 Limited diversity in educational backgrounds and job roles represented in the dataset.
 
+[Go to TOC](#table-of-contents)
+
 ## Conclusion
 
 This study highlights the critical role of data analysis in optimizing workforce management strategies and fostering a supportive work environment. By leveraging insights from employee demographics and attrition rates, organizations can tailor their HR policies and practices to enhance employee engagement, retention, and overall organizational success.
@@ -319,6 +332,8 @@ My data analysis results are summarized as follows:
 The analysis of employee demographics, attrition rates, active employee numbers, and average age underscores the importance of data-driven decision-making in human resource management. In terms of employee demographics, the company currently employs 1,470 individuals, with a gender distribution of 882 males and 588 females. This understanding of gender representation is pivotal for fostering diversity and inclusion initiatives within the organization. Furthermore, the examination of attrition rates unveils that a total of 237 employees have left, resulting in a 16.12% attrition rate. Importantly, variations in attrition rates are observed between genders and departments, underscoring the necessity for targeted retention strategies tailored to specific groups. 
 
 Regarding active employees, the current workforce capacity is reflected by 1,233 individuals, providing valuable insights into productivity levels and resource allocation. Additionally, with the average age of employees standing at 37, there exists a notable influence on recruitment practices and succession planning efforts. Future research could delve deeper into understanding the underlying reasons behind gender and departmental variations in attrition rates, enabling the development access to more effective employee retention strategies. Additionally, exploring the impact of age diversity on team dynamics and organizational performance could provide valuable insights for talent management practices going forward.
+
+[Go to TOC](#table-of-contents)
 
 
  ## Special Characters
